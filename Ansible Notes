@@ -1,0 +1,68 @@
+1. Ansible :-  Ansible is an open-source automation tool used for configuration management, application deployment, orchestration, and IT automation. 
+It allows you to manage multiple servers efficiently without needing to install an agent on each machine.
+
+Key Features of Ansible :-
+
+1) It is agentless because unlike puppet and chef, it doesn't need any agent installation on nodes. It uses SSH or WinRM (windows) for communication. 
+
+2) It uses YAML (Yet anonther machine language) which is an human readable format for writing playbooks. It is simple and easy to learn
+
+3) It makes sures that running the same playbook multiple times does not cause unintended changes.
+
+4) It uses modules, roles, and collections to extend its capabilities.
+
+Advantages of using Ansible :
+
+1) Easy to Learn & Use
+2) Scalable & Flexible
+3) No Need for Agents
+4) Large Community Support
+
+
+2. Ansible components :- Ansible uses serveral concepts to automate the daily repetitive tasks to minimize the time taken.
+
+Inventory:- A file that lists the hosts (managed nodes) Ansible will manage.
+Default location: /etc/ansible/host
+
+Modules:- It is used to perform tasks like installing packages and manage services.
+
+Examples: apt, yum, service, copy, user, file, templates etc.
+
+Playbooks:- YAML files containing a set of tasks that define what should be done on managed nodes.
+
+Tasks:- Individual units of work within a playbook. Each task calls a module.
+
+Handlers:- Special tasks that only run if notified by another task/ Modified the source code. Typically used for restarting services.
+
+Roles:- A structured way to organize playbooks which includes tasks, variables, templates, and handlers.
+
+Variables:- Used to make playbooks more dynamic. 
+
+Templates:- Jinja2 template files that use variables dynamically.
+
+Facts:- System-related variables gathered from managed nodes automatically.
+
+Plugins:- Extend Ansible’s functionality.
+Types: Lookup, Filter, Connection, Callback, Inventory, Strategy Plugins.
+
+
+3. Ansible Commands
+
+1) Run a playbook:
+2) ansible-playbook site.yml
+3) Run an ad-hoc command:
+4) ansible all -m ping
+5) Run a playbook with extra variables:
+6) ansible-playbook site.yml --extra-vars "user=admin"
+
+
+4. Advanced Concepts
+
+Ansible Vault (Encrypt sensitive data like passwords)
+
+ansible-vault encrypt secrets.yml
+ansible-vault decrypt secrets.yml
+
+Ansible Tower / AWX (UI-based automation platform for enterprise use)
+
+Dynamic Inventory (Integration with cloud services like AWS, GCP)
