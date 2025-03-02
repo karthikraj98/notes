@@ -1,0 +1,95 @@
+What is Jenkins?
+Jenkins is an open-source automation server used for Continuous Integration (CI) and Continuous Deployment (CD). It automates software builds, testing, and deployment processes.
+
+🔹Key Features of Jenkins:- 
+ 1) Open-source and free
+ 2) Supports 1000+ plugins for integration with tools like Git, Maven, Docker, Kubernetes, and more
+ 3) Highly customizable with pipelines and jobs
+ 4) Distributed build execution with master-agent architecture
+ 5) Automates CI/CD workflows
+
+* Jenkins Architecture :- Jenkins follows a Master-Agent architecture:
+
+Master Node: Controls job execution and manages configurations
+Agent Nodes: Execute build jobs distributed across multiple machines
+
+* Core Jenkins Concepts
+
+1) Job/Project :- A job (or project) is a task configured in Jenkins (e.g., build, test, deploy).
+
+Types of Jobs:
+Freestyle Job – Basic job with UI-based configuration
+Pipeline Job – Uses Groovy scripts for complex workflows
+Multibranch Pipeline – Runs different branches dynamically
+Maven Job – Specifically for Maven-based Java projects
+
+2) Build Triggers :- Jenkins can start jobs based on triggers:
+
+Manually (clicking "Build Now")
+Poll SCM (checks Git repository for changes)
+Webhook (triggers on code push to GitHub, GitLab, Bitbucket)
+Scheduled Jobs (H/5 * * * * → Runs every 5 minutes)
+
+3) Build Pipeline :- A Jenkins Pipeline is a sequence of steps (stages) written in Groovy (Jenkinsfile) for automating CI/CD.
+
+Example:
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building the application...'
+                sh 'mvn clean package'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Running tests...'
+                sh 'mvn test'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying application...'
+                sh 'scp target/*.jar user@server:/deploy/'
+            }
+        }
+    }
+}
+
+
+4)  Plugins in Jenkins :- Jenkins supports 1000+ plugins to extend functionality. Some important plugins are
+
+* Git Plugin – Integrates with Git repositories
+* Pipeline Plugin – Enables declarative pipelines
+* Maven Integration Plugin – Builds Maven projects
+* Docker Plugin – Builds and deploys Docker containers
+* SonarQube Plugin – Runs static code analysis
+
+5) Jenkinsfile (Pipeline as Code) :- A Jenkinsfile is a script (written in Groovy) that defines CI/CD pipelines.
+
+Declarative Pipeline – Easy to read and structured
+Scripted Pipeline – More flexible but complex
+
+6)  Jenkins Agents & Distributed Builds :- Jenkins supports parallel execution by running jobs on different nodes:
+
+Master Node → Controls jobs
+Agent Nodes → Run jobs on different machines
+Cloud-based Agents → Jenkins can dynamically provision agents on AWS, Kubernetes, etc.
+
+7) Continuous Deployment with Jenkins :- Jenkins integrates with Docker, Kubernetes, Ansible, Terraform for deployment automation.
+Example: Deploying a Java app to Tomcat server:
+
+stage('Deploy') {
+    steps {
+        echo 'Deploying WAR to Tomcat...'
+        sh 'scp target/app.war user@server:/opt/tomcat/webapps/'
+    }
+}
+
+
+*  Summary
+✅ Jenkins automates CI/CD by managing builds, tests, and deployments
+✅ Uses plugins to integrate with other DevOps tools
+✅ Pipelines (Jenkinsfile) define build workflows
+✅ Master-Agent architecture enables distributed execution
