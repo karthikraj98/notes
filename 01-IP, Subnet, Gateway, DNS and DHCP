@@ -1,25 +1,29 @@
 IP (Internet Protocol) Address:
 
 An IP address is a unique identifier assigned to each device on a network (such as the internet). It is used to route data between devices.
-IPv4 addresses are written as four sets of numbers (e.g., 192.168.0.1), while IPv6 addresses are longer and use hexadecimal notation (e.g., 2001:0db8:85a3:0000:0000:8a2e:0370:7334).
-Subnet:
+IPv4 addresses are written as four sets of numbers (e.g., 192.168.0.1), while IPv6 addresses are longer and use hexadecimal notation
+(e.g., 2001:0db8:85a3:0000:0000:8a2e:0370:7334).
 
+Subnet:
 A subnet (subnetwork) divides an IP network into smaller, manageable parts. This segmentation helps organize and optimize network traffic.
 The subnet mask (e.g., 255.255.255.0) determines which part of an IP address identifies the network and which part identifies the device within that network.
+
 Gateway:
-
-A gateway is a device, often a router, that connects different networks, like a local network to the internet. It acts as a bridge between internal network devices and external networks or the internet.
+A gateway is a device, often a router, that connects different networks, like a local network to the internet. It acts as a bridge between internal network 
+devices and external networks or the internet.
 In many home networks, the gateway is your router, which helps route traffic between devices inside the home network and the internet.
+
 DNS (Domain Name System):
-
-DNS is a system that converts human-readable domain names (like www.google.com) into IP addresses (like 172.217.6.68), allowing devices to locate and communicate with websites or services online.
+DNS is a system that converts human-readable domain names (like www.google.com) into IP addresses (like 172.217.6.68), allowing devices to locate and 
+communicate with websites or services online.
 When you type a website name into a browser, DNS is responsible for resolving that name to the correct IP address to establish a connection.
+
 DHCP (Dynamic Host Configuration Protocol):
-
 DHCP is a protocol used to automatically assign IP addresses and other network configuration settings to devices on a network.
-When a device (like a computer or smartphone) joins a network, DHCP allows it to automatically receive an IP address, gateway, subnet mask, and DNS server details without requiring manual configuration.
-So, to recap:
+When a device (like a computer or smartphone) joins a network, DHCP allows it to automatically receive an IP address, gateway, subnet mask, and 
+DNS server details without requiring manual configuration.
 
+So, to recap:
 IP: Identifies devices on the network.
 Subnet: Divides a larger network into smaller sections.
 Gateway: Routes data between networks (e.g., local network to internet).
