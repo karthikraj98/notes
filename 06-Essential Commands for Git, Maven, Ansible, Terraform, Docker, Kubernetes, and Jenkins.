@@ -1,0 +1,92 @@
+Essential Commands for Git, Maven, Ansible, Terraform, Docker, Kubernetes, and Jenkins.
+
+Basic Git Commands
+git init                     # Initialize a Git repository
+git clone <repo_url>         # Clone a repository
+git status                   # Check the status of files
+git add <file>               # Add file to staging area
+git commit -m "Message"      # Commit changes
+git push origin main         # Push changes to remote repo
+git pull origin main         # Pull latest changes from remote repo
+git log                      # View commit history
+git branch                   # List all branches
+git checkout -b <branch>     # Create and switch to a new branch
+git merge <branch>           # Merge branches
+git stash                    # Stash changes temporarily
+git reset --hard HEAD~1      # Undo the last commit
+git tag v1.0.0               # Create a tag
+
+Maven Commands (Build & Dependency Management)
+mvn clean                    # Remove target directory
+mvn compile                  # Compile source code
+mvn package                  # Package the code into a JAR/WAR file
+mvn install                  # Install package into local repository
+mvn test                     # Run unit tests
+mvn verify                   # Verify the package
+mvn dependency:tree          # Display project dependencies
+mvn exec:java -Dexec.mainClass=App  # Run Java application
+mvn site                     # Generate project site documentation
+mvn versions:display-dependency-updates  # Check for dependency updates
+Ansible Commands (Configuration Management)
+
+ansible --version            # Check Ansible version
+ansible all -m ping          # Ping all hosts in inventory
+ansible-playbook site.yml    # Run a playbook
+ansible-inventory --list     # Display inventory
+ansible-playbook --check site.yml  # Dry run playbook
+ansible-playbook -i hosts playbook.yml --tags "install"  # Run playbook with specific tag
+ansible-playbook -e "var=value" playbook.yml  # Pass extra variables
+ansible-doc -l               # List all available modules
+
+Terraform Commands (Infrastructure as Code)
+terraform init               # Initialize Terraform
+terraform plan               # Preview changes before applying
+terraform apply              # Apply Terraform configuration
+terraform destroy            # Destroy resources
+terraform fmt                # Format configuration files
+terraform validate           # Validate configuration files
+terraform show               # Show applied resources
+terraform output             # Show output values
+terraform state list         # List all managed resources
+terraform workspace list     # List workspaces
+
+Docker Commands (Containerization)
+docker version               # Check Docker version
+docker images                # List all images
+docker ps                    # List running containers
+docker ps -a                 # List all containers
+docker build -t myimage .    # Build Docker image
+docker run -d -p 8080:80 myimage  # Run a container
+docker stop <container_id>   # Stop a container
+docker rm <container_id>     # Remove a container
+docker rmi <image_id>        # Remove an image
+docker logs <container_id>   # View logs of a container
+docker exec -it <container_id> bash  # Access container shell
+docker-compose up -d         # Start services using Docker Compose
+docker-compose down          # Stop all services
+
+Kubernetes Commands (Container Orchestration)
+
+kubectl version --client      # Check Kubernetes client version
+kubectl get nodes             # List all nodes
+kubectl get pods              # List all pods
+kubectl get services          # List all services
+kubectl get deployments       # List deployments
+kubectl apply -f app.yaml     # Apply a configuration file
+kubectl delete pod <pod_name> # Delete a pod
+kubectl logs <pod_name>       # View logs of a pod
+kubectl exec -it <pod_name> -- /bin/sh  # Access pod shell
+kubectl scale deployment <deployment_name> --replicas=3  # Scale deployment
+kubectl rollout restart deployment <deployment_name>  # Restart deployment
+kubectl describe pod <pod_name>  # Show detailed pod info
+kubectl port-forward pod/<pod_name> 8080:80  # Forward port
+
+Jenkins Commands (CI/CD)
+systemctl start jenkins       # Start Jenkins service
+systemctl stop jenkins        # Stop Jenkins service
+systemctl restart jenkins     # Restart Jenkins service
+systemctl status jenkins      # Check Jenkins status
+cat /var/lib/jenkins/secrets/initialAdminPassword  # Get Jenkins initial password
+jenkins-cli.jar -s http://localhost:8080 list-jobs  # List all jobs
+jenkins-cli.jar -s http://localhost:8080 build my-job  # Trigger a Jenkins job
+jenkins-cli.jar -s http://localhost:8080 console my-job  # View job console output
